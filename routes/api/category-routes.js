@@ -90,22 +90,32 @@ router.put('/:id', (req, res) => {
     );
 });
 
+// delete products with the category_id
 router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
-    Category.destroy({
+Product.destroy({
+  where: {
+      category_id: req.params.id
+  }
+})
+.then(() => {
+  // deleting the products, delete the category
+  Category.destroy({
       where: {
-        id: req.params.id
+          id: req.params.id
       }
-    })
-    .then((category) => {
+  })
+  .then((category) => {
       res.json(category);
-    }
-    )
-    .catch((err) => {
+  })
+  .catch((err) => {
       console.log(err);
       res.status(500).json(err);
-    }
-    );
+  });
+})
+.catch((err) => {
+  console.log(err);
+  res.status(500).json(err);
+});
 });
 
 module.exports = router;
