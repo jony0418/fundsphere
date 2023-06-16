@@ -3,17 +3,6 @@
 ## Description
 This is a back end application for an e-commerce site which is built using Express.js API and Sequelize to interact with a MySQL database. This application allows the user to view, add, update, and delete categories, products, and tags in the database.
 
-## User Story
-As a manager at an internet retail company, I want a back end for my e-commerce website that uses the latest technologies, so that my company can compete with other e-commerce companies.
-
-## Acceptance Criteria
-- A functional Express.js API.
-- Ability to connect to a database using Sequelize when database name, MySQL username, and MySQL password are added to an environment variable file.
-- A development database is created and is seeded with test data when schema and seed commands are entered.
-- Server starts and Sequelize models sync to the MySQL database when the command to invoke the application is entered.
-- Data for each of these routes (categories, products, tags) is displayed in a formatted JSON when API GET routes are opened in Insomnia.
-- Ability to successfully create, update, and delete data in the database when API POST, PUT, and DELETE routes are tested in Insomnia.
-
 ## Mock-Up
 The application's GET, POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia. 
 
@@ -45,15 +34,15 @@ The relationships between the models are:
 
 ## API Routes
 You can perform RESTful CRUD operations on the following routes:
-- `product-routes.js`
-- `tag-routes.js`
-- `category-routes.js`
+- `products`
+- `tags`
+- `categories`
 
 ## Seed the Database
-Run `npm run seed` to seed data to your database so that you can test your routes.
+Run `npm seed/seeds.js` to seed data to your database so that you can test your routes.
 
 ## Sync Sequelize to the Database on Server Start
-To sync the Sequelize models to the MySQL database on server start, refer to the code in `server.js`.
+To sync the Sequelize models to the MySQL database on server start, refer to the code in `npm start`.
 
 ## Contributing
 This project is open for contributions. Before making a contribution, please discuss the changes via issue.
